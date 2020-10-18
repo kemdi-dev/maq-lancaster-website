@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="js/script.js"></script>
     <style>
-        .carousel-control.right{
-            background-image: none !important;
-        }
-        .left.carousel-control{
-            background-image: none !important;
+        .main-links ul li:nth-child(3){
+            border-bottom: 1px solid #C1BFAC;
         }
     </style>
 </head>
 <body style="background-color: #C1BFAC;">
     <nav id="navbar" style="background-color: #272727;">
-        <div class="main-title"><p>MAQ LANCASTER</p></div>
+        <div class="main-title"><a href="index.html"><p>MAQ LANCASTER</p></a></div>
         <div class="main-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,12 +26,17 @@
                 <li><a href="index.html#subscribe">Stay Updated</a></li>
             </ul>
         </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
 
     <section class="carousel-books" aria-label="Gallery" id="books-dedicated">
         <div class="book-page">
             <ol class="carousel__viewport">
-                <li id="not-so-fragile"
+                <li id="notsofragile"
                     tabindex="0"
                     class="carousel__slide">
     

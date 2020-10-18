@@ -14,7 +14,7 @@ body{
     transition: background-color 1s ease;
 }
 h1{
-    font-size: 40px;
+    font-size: 50px !important;
     letter-spacing: 2px;
     text-align: center;
     font-weight: bold !important;
@@ -50,7 +50,7 @@ h1{
 }
 nav .main-title{
     float: left;
-    padding: 0 30px;
+    padding-right: 30px;
     width: 30%;
     font-weight: bold;
     letter-spacing: 1px;
@@ -60,7 +60,23 @@ nav .main-title p{
     color: #272727;
     background-color: #C1BFAC;
     display: inline;
-    padding: 1%;
+    padding: 1% 2%;
+    border: 2px solid #272727;
+}
+nav .main-title a p{
+    color: #272727;
+    background-color: #C1BFAC;
+    display: inline;
+    padding: 1% 2%;
+    border: 2px solid #272727;
+}
+nav .main-title a p:hover{
+    color: #C1BFAC;
+    background-color: #272727;
+    display: inline;
+    padding: 1% 2%;
+    border: 2px solid #C1BFAC;
+    transition: background-color 130ms ease-in;
 }
 nav .main-links{
     width: 70%;
@@ -90,15 +106,99 @@ nav .main-links{
     text-decoration: none !important;
 }
 
+.burger{
+    display: none;
+    cursor: pointer;
+    background-color: #272727;
+}
+.burger div{
+    width: 40px;
+    height: 4px;
+    background-color: #C1BFAC;
+    margin: 8px;
+    transition: all 0.5s ease;
+}
+@media screen and (max-width:768px){
+    html, body{
+        overflow-x: hidden;
+    }
+    #navbar{
+        justify-content: space-around;
+        background-color: #272727;
+        top: 0 !important;
+    }
+    nav .main-title{
+        width: 70%;
+        margin-left: 0;
+        font-size: 25px;
+        padding: 0;
+    }
+    nav .main-links{
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: #272727;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin-right: 0;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    #navbar ul{
+        display: contents;
+        list-style-type: none;
+        text-align: center;
+    }
+    .main-links li{
+        opacity: 0;
+    }
+    nav .main-links a{
+        font-size: 15px;
+    }
+    .burger{
+        display: block;
+    }
+}
+.nav-active{
+    transform: translateX(0%) !important;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
 
 
 
 section{
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 #home{
     background-color: #C1BFAC;
+    width: 100%;margin-bottom: 30px;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -195,6 +295,7 @@ section{
 .carousel-books {
     position: relative;
     perspective: 100px;
+    height: 100vh;
 }
   
 .carousel__viewport {
@@ -366,11 +467,20 @@ section{
     text-align: left;
     font-weight: bold;
 }
+#home .book-description a {
+    text-decoration: none;
+    color: #C1BFAC;
+}
+#home .book-description a:hover{
+    color: #c1bfac9a;
+    text-decoration: none;
+}
 #home .book-description span{
     color: #C1BFAC;
 }
 #home .book-description p{
     padding: 20px 0;
+    margin: 0;
 }
 #home img{
     width: 30%;
@@ -379,10 +489,10 @@ section{
 .popup{
     position: absolute;
     bottom: 0;
-    width: 50%;
+    width: 60%;
     height: 15%;
     background-color: #C1BFAC;
-    margin: 0 25%;
+    margin: 0 20%;
     z-index: +2;
 }
 .popup button{
@@ -411,6 +521,7 @@ section{
     background-color: #272727;
     color: #ffffff;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 .popup-cancel{
     width: 20px;
@@ -420,16 +531,46 @@ section{
     cursor: pointer;
 }
 
+@media screen and (max-width:768px){
+    #home{
+        height: 100%;
+    }
+    .container{
+        padding: 0 !important;
+    }
+    #myCarousel{
+        margin-top: 90px;
+    }
+    #home .book-description{
+        width: 100%;
+    }
+    #home .book-description p{
+        font-size: 18px;
+    }
+    #home img{
+        width: 40%;
+        float: left;
+        margin: 40px 0;
+        min-width: 190px;
+    }
+    .popup{
+        position: fixed;
+        width: 100%;
+        margin: 0;
+    }
+}
+
 
 /****** BOOKS ******/
 
 #books{
-    padding: 6% 0;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    margin: 5px 0;
 }
 .div-books{
     width: 80%;
     margin: 0 10%;
-    height: 85%;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -437,13 +578,12 @@ section{
 }
 .div-books div{
     display: inline-block;
-    height: 98%;
     padding: 1% 5%;
     margin: 1%;
     
 }
 .div-books img{
-    height: 63%;
+    height: 400px;
     margin-top: 3.5%;
     margin-bottom: 3.5%;
 }
@@ -465,12 +605,23 @@ section{
     color: #272727;
     text-decoration: none;
 }
+@media screen and (max-width:768px){
+    .div-books div{
+        margin-bottom: 40px;
+    }
+}
 
 
 /****** DEDICATED BOOK PAGE ******/
 .carousel-books{
     width: 100%;
     margin-bottom: 70px;
+}
+.book-page{
+    height: 100%;
+}
+.book-gallery-container{
+    height: 100%;
 }
 .book-gallery{
     width: 80%;
@@ -488,14 +639,13 @@ section{
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-    height: 100%;
+    width: 100%;
     margin-right: 5%;
-    min-height: 440px;
     display: inline-block;
 }
 .book-container img{
     margin-top: 2%;
-    height: 80%;
+    width: 100%;
 }
 .book-container p{
     padding: 5%;
@@ -520,7 +670,38 @@ section{
 }
 .book-description2{
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+@media screen and (max-width:768px){
+    .carousel-books{
+        margin-top: 80px;
+    }
+    .book-gallery{
+        margin-top: 0px;
+        height: 100%;
+    }
+    .book-container{
+        position: absolute;
+        width: 70%;
+        margin: 0 15%;
+        top: 20px;
+    }
+    .book-container img{
+        width: 100%;
+        margin: 6% 0;
+    }
+    .book-description2{
+        position: absolute;
+        width: 90%;
+        margin: 0 5%;
+        background-color: #ffffffcc;
+        line-height: 1.8;
+        padding: 30px 10px;
+        top: 100px;
+    }
+    .carousel-books::before, .carousel-books::after, .carousel__prev, .carousel__next{
+        margin-top: 50%;
+    }
 }
 
 
@@ -528,7 +709,8 @@ section{
 /****** ABOUT ******/
 
 #about{
-    text-align: center
+    text-align: center;
+    padding: 5% 0;
 }
 #about img{
     width: 350px;
@@ -542,20 +724,31 @@ section{
     color: #ffffff;
     width: 60%;
     margin: 0 20%;
+    line-height: 1.6;
 }
 #about .social-media-icons{
     padding-top: 2%;
 }
 #about .social-media-icons svg{
-    width: 30px;
+    width: 40px;
 }
 #about .social-media-icons a:nth-child(2){
-    margin: 0 2%;
+    margin: 0 3%;
 }
 #about .social-media-icons a:hover{
     text-decoration: none;
     opacity: 0.5;
     transition: opacity 100ms ease-in;
+}
+@media screen and (max-width:768px){
+    #about p{
+        width: 90%;
+        margin: 0 auto;
+        font-size: 18px;
+    }
+    #about .social-media-icons{
+        padding-top: 30px;
+    }
 }
 
 
@@ -601,7 +794,7 @@ section{
 }
 .div-contact #message{
     width: 100%;
-    height: 30%;
+    height: 200px;
 }
 .div-contact #btn-submit{
     width: 30%;
@@ -611,23 +804,51 @@ section{
     color: #C1BFAC;
     letter-spacing: 1px;
 }
+@media screen and (max-width:1100px){
+    .div-contact{
+        width: 70%;
+        margin: 0 15%;
+    }
+}
+@media screen and (max-width:768px){
+    .div-contact{
+        width: 90%;
+        margin: 0 5%;
+    }
+    .div-contact form div{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .div-contact form label{
+        font-size: 14px;
+    }
+}
 
 
 /****** SUBSCRIBE ******/
 
 #subscribe{
-    height: 90vh;
+    height: 100%;
+    padding-bottom: 2%;
+    margin-bottom: 80px;
 }
 .div-subscribe{
     width: 50%;
     margin: 0 25%;
     padding: 5% 0;
+    height: 300px;
 }
 .div-subscribe form{
-    padding-top: 20%;
+    padding-top: 50px;
 }
 .div-subscribe input{
     height: 40px;
+}
+@media screen and (max-width:768px){
+    .div-subscribe{
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 
@@ -637,10 +858,11 @@ footer{
     font-size: 11px;
 }
 .div-footer{
-    width: 80%;
+    width: 90%;
     border-top: 2px solid #272727;
-    margin: 0 10%;
+    margin: 0 auto;
     height: 70px;
     display: flex;
     align-items: center;
+    padding-left: 40px;
 }
