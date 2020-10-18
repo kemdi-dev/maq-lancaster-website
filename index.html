@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script defer src="js/script.js"></script>
+    <style>
+        .panel{
+            background-color: transparent !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="main-title"><p>MAQ LANCASTER</p></div>
+        <div class="main-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#subscribe">Stay Updated</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container" id="home" style="width: 100%;height:100vh;margin-bottom: 70px;" class="panel" data-color="beige">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators 
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            -->
+            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="home-gallery">
+                        <div class="div-home-inside">
+                            <div class="book-description">
+                                <h1>Living is <span>hard</span>. <br>Loving is harder.</h1>
+                                <p>
+                                    Pain and heartbreak are all Valerie has ever known. Two years after a painful 
+                                    experience, Val decides it’s time for a fresh start, so she enrolls in university 
+                                    while swearing off relationships—because who really needs the added stress? However, 
+                                    that all changes when she meets Lou and their friendship slowly evolves into 
+                                    something more…. 
+                                
+                                    <br><br>Can Val overcome her past trauma and accept what’s right in front of her or is 
+                                    she destined to fall back into old ways?
+                                </p>
+                                <h1>Out Now</h1>
+                            </div>
+                            <img class="book-cover" src="img/notsofragile.jpg" alt="Book Cover of Not So Fragile">
+                        </div>
+                        
+                    </div>
+                </div>
+        
+                <div class="item">
+                    <div class="home-gallery">
+                        <div class="div-home-inside">
+                            <div class="book-description">
+                                <h1>Meet <span>Jeanne Rowe</span>.</h1>
+                                <p>
+                                    Sixteen-year-old Jeanne Rowe finds her life in shambles after the death of her 
+                                    mother. Hurt and confused about the sudden downturn in her life, she drowns 
+                                    herself in booze and drugs in hopes that it’ll all just fade away. 
+                                    <br><br>It doesn’t.<br><br>
+                                    Then there’s Ryan, the boy who just won’t stay away. He’s intent on gaining her 
+                                    trust, but Jeanne isn’t the trusting type–hasn’t been for years. “Ignore him and 
+                                    he’ll go away” is her motto… until she starts wanting him to stay.
+                                </p>
+                                <h1>Coming Soon</h1>
+                            </div>
+                            <img class="book-cover" src="img/brokenapart.jpg" alt="Book Cover of Not So Fragile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+            <div class="popup" id="popup">
+                <button onclick="myFunction()">
+                    <svg class="popup-cancel" viewBox="0 0 40 40" style="fill:#272727;">
+                        <g>
+                            <path d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20s20-9,20-20C40,9,31,0,20,0z M30.5,27c1,1,1,2.6,0,3.5c-1,1-2.6,1-3.5,0
+                                l-7-7l-7,7c-1,1-2.6,1-3.5,0c-1-1-1-2.6,0-3.5l7-7l-7-7c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l7,7l7-7c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5
+                                l-7,7L30.5,27z"/>
+                        </g>
+                    </svg>
+                </button>
+                <form action="/action_page.php">
+                    <input class="popup-email" type="text" placeholder="Enter Email Address" name="emailadd">
+                    <input class="popup-submit" type="submit" value="SUBSCRIBE">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <section id="books" class="panel" data-color="beige">
+        <div class="div-books">
+            <div>
+                <p>Not So Fragile</p>
+                <a href="books.html#notsofragile"><img class="book1" src="img/notsofragile.jpg" alt="Book Cover of Not So Fragile"></a>
+                <a href="books.html#notsofragile"><p>Buy Now</p></a>
+            </div>
+            <div>
+                <p>Broken Apart</p>
+                <a href="books.html#brokenapart"><img class="book2" src="img/brokenapart.jpg" alt="Book Cover of Broken Apart"></a>
+                <a href="books.html#brokenapart"><p class="book-links">Pre-Order</p></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="panel" data-color="grey">
+        <img class="author-photo" src="img/author-vector.png" alt="Book Cover of Broken Apart">
+        <h1>Who Am I?</h1>
+        <p>
+            It’s simple really. I’m a writer who spends her free time gaming and baking! Feel free to follow 
+            me on Instagram and other social media platforms.
+        </p>
+        <div class="social-media-icons">
+            <a href="#twitter">
+                <svg id="twitter"viewBox="0 0 50 50">
+                    <style type="text/css">
+                        .st0{fill:#C1BFAC;}
+                    </style>
+                    <g>
+                        <path class="st0" d="M44.7,0H5.3C2.4,0,0,2.4,0,5.3v39.4C0,47.6,2.4,50,5.3,50h39.4c2.9,0,5.3-2.4,5.3-5.3V5.3
+                            C50,2.4,47.6,0,44.7,0z M44.5,14.3c-1.4,1.3-2.1,1.8-2.1,1.8s0.8,14-10.6,21.8S9,42.2,3.3,38.6c0,0,3.9,0.5,7.3-0.6
+                            c3.4-1.1,5.8-3,5.8-3s-2.7,0-5.2-1.8c-2.5-1.8-3-4.5-3-4.5s2.3,0.4,3.7-0.1c0,0-2.5-0.2-5.1-3.2c-2.2-2.7-1.8-5.7-1.8-5.7
+                            s1.4,1.1,3.8,1.1c0,0-3.8-2.2-3.8-7.3c0-3,1.3-4.5,1.3-4.5s3.3,4.3,8.8,6.8c5.6,2.5,9.5,2.4,9.5,2.4l0,0c-0.2-0.7-0.3-1.4-0.3-2.1
+                            c0-4.9,4-8.8,8.8-8.8c2.6,0,4.9,1.1,6.5,2.8l0,0c0,0,3.5-0.5,5.7-2.1c0,0-0.2,1.5-1.4,2.8c-1.2,1.3-2.1,2-2.1,2s2.6-0.3,4.7-1.3
+                            C46.7,11.5,45.9,13,44.5,14.3z"/>
+                    </g>
+                </svg>
+            </a>
+            
+
+            <a href="https://www.goodreads.com/author/show/16228445.Maq_Lancaster">
+                <svg id="goodreads" viewBox="0 0 50 50">
+                    <style type="text/css">
+                        .st0{fill:#C1BFAC;}
+                    </style>
+                    <g>
+                        <path class="st0" d="M25,9.4c-5.1,0-8.7,4.3-8.7,10.4c0,6.1,3.6,10.4,8.7,10.4s8.7-4.3,8.7-10.4C33.7,13.7,30.1,9.4,25,9.4z"/>
+                    </g>
+                    <g>
+                        <path class="st0" d="M44.7,0H5.3C2.4,0,0,2.4,0,5.3v39.4C0,47.6,2.4,50,5.3,50h39.4c2.9,0,5.3-2.4,5.3-5.3V5.3
+                            C50,2.4,47.6,0,44.7,0z M36.5,32.5c0,5-3,10.9-11.6,10.9c-8.4,0-10.3-5.6-10.3-7.8h2.8c0,0,0.1,5,7.5,5c8.2,0,8.8-6.2,8.8-8.1v-3.8
+                            C31.6,31.4,28.6,33,25,33c-6.7,0-11.5-5.6-11.5-13.2S18.3,6.6,25,6.6c3.6,0,6.6,1.6,8.7,4.3V7.3h2.8V32.5z"/>
+                    </g>
+                </svg>
+            </a>
+            
+
+            <a href="https://www.facebook.com/MaqLancaster/">
+                <svg id="facebook" viewBox="0 0 50 50">
+                <style type="text/css">
+                    .st0{fill:#C1BFAC;}
+                </style>
+                <g>
+                    <path class="st0" d="M44.7,0H5.3C2.4,0,0,2.4,0,5.3v39.4C0,47.6,2.4,50,5.3,50h15.5V30.5h-6.7V23h6.7c0,0,0-4.1,0-7.3
+                        c0-3.5,3.2-8.4,8.1-8.4c4.7,0,7.1,0.7,7.1,0.7v6.2c0,0-2.4,0-3.9,0c-1.9,0-3.3,1.6-3.3,3c0,1.6,0,5.8,0,5.8h7.2l-1.1,7.4h-6.1V50
+                        h15.9c2.9,0,5.3-2.4,5.3-5.3V5.3C50,2.4,47.6,0,44.7,0z"/>
+                </g>
+                </svg>
+            </a>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="panel" data-color="beige">
+        <div class="div-contact">
+            <h1>Get In Touch</h1>
+            <form action="/action_page.php">
+                <div>
+                    <label for="fname">First Name: </label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                </div>
+                <div>
+                    <label for="lname">Last Name: </label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                </div>
+                <label for="emailadd">Email Address: </label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="emailadd">Message: </label>
+                <textarea id="message" name="message"></textarea><br><br>
+                <input id="btn-submit" type="submit" value="SUBMIT">
+            </form> 
+        </div>
+    </section>
+
+    <section id="subscribe" class="panel" data-color="beige">
+        <div class="div-subscribe">
+            <h1>Stay Updated</h1>
+            <form action="/action_page.php">
+                <input class="popup-email" type="text" placeholder="Enter Email Address" name="emailadd">
+                <input class="popup-submit" type="submit" value="SUBSCRIBE">
+            </form> 
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="div-footer">
+            © 2020 Maq Lancaster
+        </div>
+    </footer>
+    
+</body>
+</html>

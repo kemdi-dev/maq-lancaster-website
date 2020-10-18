@@ -1,0 +1,646 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+}
+body{
+    background-color: #C1BFAC;
+    transition: background-color 1s ease;
+}
+h1{
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: bold !important;
+    color: #272727;
+}
+.color-grey{
+    background-color: #272727;
+}
+.color-beige{
+    background-color: #C1BFAC;
+}
+
+
+/******** NAVBAR *********/
+
+#navbar{
+    width: 100%;
+    height: 70px;
+    display: flex !important;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: #27272700;
+    z-index: +3;
+}
+#navbar.scrolled {
+    background-color: #272727 !important;
+    transition: background-color 200ms linear;
+}
+#navbar.scrolled2{
+    top: -80px;
+    transition: top 200ms ease-in;
+}
+nav .main-title{
+    float: left;
+    padding: 0 30px;
+    width: 30%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 5%;
+}
+nav .main-title p{
+    color: #272727;
+    background-color: #C1BFAC;
+    display: inline;
+    padding: 1%;
+}
+nav .main-links{
+    width: 70%;
+    font-size: 10px;
+    margin-right: 5%;
+    color: #ffffff;
+}
+#navbar ul{
+    float: right;
+    display: flex;
+    list-style-type: none;
+    text-align: right;
+    margin: 0;
+}
+#navbar ul li{
+    padding: 5px 20px;
+    letter-spacing: 1px;
+}
+#navbar ul li:last-child{
+    border: 1px solid #C1BFAC;
+}
+#navbar a{
+    color: #ffffff;
+}
+#navbar a:hover{
+    color: #ffffff93;
+    text-decoration: none !important;
+}
+
+
+
+
+section{
+    height: 100vh;
+    width: 100%;
+}
+#home{
+    background-color: #C1BFAC;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.div-home{
+    height: 97%;
+    width: 98%;
+    margin: 0 1%;
+    background-color: #272727;
+}
+.div-home-inside{
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    position: relative;
+    z-index: +2;
+}
+
+
+
+
+
+/******* CAROUSEL ********/
+
+@keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+}
+  
+@keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+}
+  
+@keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+}
+
+  
+*::-webkit-scrollbar {
+    width: 0;
+}
+  
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+  
+* {
+    -ms-overflow-style: none;
+}
+  
+.carousel-books ol, .carousel-books li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.carousel-books {
+    position: relative;
+    perspective: 100px;
+}
+  
+.carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+  
+.carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    counter-increment: item;
+}
+  
+.carousel__slide:before {
+    content: counter(item);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+    color: #fff;
+    font-size: 0em;
+}
+  
+.carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+  
+@media (hover: hover) {
+    .carousel__snapper {
+        animation-name: tonext, snap;
+        animation-timing-function: ease;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+  
+    .carousel__slide:last-child .carousel__snapper {
+        animation-name: tostart, snap;
+    }
+}
+  
+@media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+}
+  
+.carousel-books:hover .carousel__snapper,
+  .carousel-books:focus-within .carousel__snapper {
+    animation-name: none;
+}
+  
+.carousel__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+  
+.carousel__navigation-list,
+  .carousel__navigation-item {
+    display: inline-block;
+}
+  
+.carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+}
+  
+.carousel-books::before,
+  .carousel-books::after,
+  .carousel__prev,
+  .carousel__next {
+    position: absolute;
+    top: 0;
+    margin: 0 50px;
+    margin-top: 28%;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+      z-index: +3;
+}
+  
+.carousel-books::before,
+  .carousel__prev {
+    left: -1rem;
+}
+  
+.carousel-books::after,
+  .carousel__next {
+    right: -1rem;
+}
+  
+.carousel-books::before,
+  .carousel-books::after {
+    content: '';
+    z-index: 1;
+    background-color: #333;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+}
+  
+.carousel-books::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+  
+.carousel-books::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+.carousel__viewport{
+      overflow-y: hidden;
+}
+
+
+/******* CAROUSEL END ********/
+
+
+#myCarousel{
+    width: 100%;
+    background-color: #272727;
+}
+
+
+/****** HOME ******/
+
+#home .home-gallery{
+    width: 100%;
+    height: 97vh;
+}
+#home .book-description{
+    color: #ffffff;
+    width: 60%;
+    float: left;
+    line-height: 1.8;
+}
+#home .book-description h1{
+    margin: 0;
+    line-height: 1.4;
+    text-align: left;
+    font-weight: bold;
+}
+#home .book-description span{
+    color: #C1BFAC;
+}
+#home .book-description p{
+    padding: 20px 0;
+}
+#home img{
+    width: 30%;
+    float: right;
+}
+.popup{
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 15%;
+    background-color: #C1BFAC;
+    margin: 0 25%;
+    z-index: +2;
+}
+.popup button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    background-color: transparent;
+}
+.popup form{
+    width: 85%;
+    margin: 6% 7.5%;
+    height: 30%;
+}
+.popup form input{
+    height: 100%;
+}
+.popup-email{
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+}
+.popup-submit{
+    width: 35%;
+    float: right;
+    background-color: #272727;
+    color: #ffffff;
+    cursor: pointer;
+}
+.popup-cancel{
+    width: 20px;
+    float: right;
+}
+.popup-cancel:hover{
+    cursor: pointer;
+}
+
+
+/****** BOOKS ******/
+
+#books{
+    padding: 6% 0;
+}
+.div-books{
+    width: 80%;
+    margin: 0 10%;
+    height: 85%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.div-books div{
+    display: inline-block;
+    height: 98%;
+    padding: 1% 5%;
+    margin: 1%;
+    
+}
+.div-books img{
+    height: 63%;
+    margin-top: 3.5%;
+    margin-bottom: 3.5%;
+}
+.div-books p{
+    padding: 5%;
+    background-color: #272727;
+    color: #C1BFAC;
+    margin: 0;
+}
+.div-books a{
+    text-decoration: none !important;
+}
+.div-books a p{
+    background-color: #272727;
+    text-decoration: none !important;
+}
+.div-books a p:hover{
+    background-color: #27272746;
+    color: #272727;
+    text-decoration: none;
+}
+
+
+/****** DEDICATED BOOK PAGE ******/
+.carousel-books{
+    width: 100%;
+    margin-bottom: 70px;
+}
+.book-gallery{
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    position: relative;
+    z-index: +1;
+    margin-top: 100px;
+}
+.book-container{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 100%;
+    margin-right: 5%;
+    min-height: 440px;
+    display: inline-block;
+}
+.book-container img{
+    margin-top: 2%;
+    height: 80%;
+}
+.book-container p{
+    padding: 5%;
+    background-color: #272727;
+    color: #C1BFAC;
+}
+.book-description2 a img{
+    height: 25px;
+    margin-right: 20px;
+    opacity: 1;
+}
+.book-description2 a img:hover{
+    opacity: 0.5;
+    transition: opacity 120ms ease-in;
+}
+.book-container a p{
+    background-color: #272727;
+}
+.book-container a p:hover{
+    background-color: #27272746;
+    color: #272727;
+}
+.book-description2{
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+
+/****** ABOUT ******/
+
+#about{
+    text-align: center
+}
+#about img{
+    width: 350px;
+    margin-top: 5%;
+}
+#about h1{
+    color: #C1BFAC;
+    padding: 1%;
+}
+#about p{
+    color: #ffffff;
+    width: 60%;
+    margin: 0 20%;
+}
+#about .social-media-icons{
+    padding-top: 2%;
+}
+#about .social-media-icons svg{
+    width: 30px;
+}
+#about .social-media-icons a:nth-child(2){
+    margin: 0 2%;
+}
+#about .social-media-icons a:hover{
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 100ms ease-in;
+}
+
+
+/****** CONTACT ******/
+
+.div-contact{
+    width: 40%;
+    height: 90%;
+    margin: 0 30%;
+    padding: 6% 0;
+    font-size: 11px;
+    color: #272727;
+}
+.div-contact form{
+    height: 100%;
+    margin-top: 6%;
+}
+.div-contact form div:nth-child(1){
+    width: 46%;
+    float: left;
+    margin-right: 4%;
+}
+.div-contact #fname, .div-contact #lname{
+    width: 100%;
+}
+.div-contact form div:nth-child(2){
+    width: 46%;
+    float: right;
+    margin-left: 4%;
+}
+.div-contact form input{
+    height: 40px;
+    padding-left: 10px;
+}
+.div-contact form input:last-child{
+    padding-left: 0;
+}
+.div-contact form label{
+    font-weight: normal;
+}
+.div-contact form #email{
+    width: 100%;
+}
+.div-contact #message{
+    width: 100%;
+    height: 30%;
+}
+.div-contact #btn-submit{
+    width: 30%;
+    margin: 0 35%;
+    cursor: pointer;
+    background-color: #272727;
+    color: #C1BFAC;
+    letter-spacing: 1px;
+}
+
+
+/****** SUBSCRIBE ******/
+
+#subscribe{
+    height: 90vh;
+}
+.div-subscribe{
+    width: 50%;
+    margin: 0 25%;
+    padding: 5% 0;
+}
+.div-subscribe form{
+    padding-top: 20%;
+}
+.div-subscribe input{
+    height: 40px;
+}
+
+
+/****** FOOTER ******/
+
+footer{
+    font-size: 11px;
+}
+.div-footer{
+    width: 80%;
+    border-top: 2px solid #272727;
+    margin: 0 10%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
